@@ -1,6 +1,5 @@
 package com.mb;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.mb.util.JWTokenUtility;
 import com.mb.util.TokenProvider;
 import org.jose4j.jwt.MalformedClaimException;
@@ -13,7 +12,7 @@ import org.jose4j.lang.JoseException;
  */
 public class App 
 {
-    public static void main( String[] args ) throws InvalidJwtException, MalformedClaimException, JoseException, JsonProcessingException {
+    public static void main( String[] args ) throws InvalidJwtException, MalformedClaimException, JoseException {
         System.out.println( "Hello World!" );
         System.out.println("------------------------------------");
 //        AuthUser authUser = new AuthUser("KhanhHN", "123456");

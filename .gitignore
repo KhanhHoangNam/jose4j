@@ -1,2 +1,3 @@
 .idea/
 jwt-with-rsa.iml
+target/
