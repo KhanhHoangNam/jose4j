@@ -1,6 +1,5 @@
 package com.mb.util;
 
-import com.mb.domain.AuthUser;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 import org.jose4j.jwk.RsaJsonWebKey;
@@ -11,12 +10,9 @@ import org.jose4j.jwt.MalformedClaimException;
 import org.jose4j.jwt.consumer.InvalidJwtException;
 import org.jose4j.jwt.consumer.JwtConsumer;
 import org.jose4j.jwt.consumer.JwtConsumerBuilder;
-import org.jose4j.keys.HmacKey;
 import org.jose4j.lang.JoseException;
 
 import javax.crypto.SecretKey;
-import java.io.UnsupportedEncodingException;
-import java.security.Key;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
