@@ -2,32 +2,40 @@ package com.mb;
 
 import com.mb.util.JWTokenUtility;
 import com.mb.util.TokenProvider;
-import org.jose4j.jwt.MalformedClaimException;
-import org.jose4j.jwt.consumer.InvalidJwtException;
-import org.jose4j.lang.JoseException;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 /**
  * Hello world!
- *
  */
-public class App 
-{
-    public static void main( String[] args ) throws InvalidJwtException, MalformedClaimException, JoseException {
-        System.out.println( "Hello World!" );
-        System.out.println("------------------------------------");
-//        AuthUser authUser = new AuthUser("KhanhHN", "123456");
+public class App {
+    public static void main(String[] args) throws Exception {
+        SimpleDateFormat sdfDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
         String authUser = "KhanhHN";
+        System.out.println("------------------------Using RSA------------------------");
+
+
         String token = JWTokenUtility.buildJWT(authUser);
         System.out.println("Token is: " + token);
 
-        System.out.println("Get credentials from token:  ");
+        System.out.println(sdfDate.format(new Date()));
         String authUser1 = JWTokenUtility.validate(token);
-        System.out.println(authUser1);
+        System.out.println("Get credentials from token: " + authUser1);
+        System.out.println(sdfDate.format(new Date()));
 
-        System.out.println("------------------------------------");
-        String jwt = TokenProvider.issueToken("KhanhHN");
-        System.out.println(jwt);
-        String userData = TokenProvider.verifyToken(jwt);
-        System.out.println(userData);
+        System.out.println("------------------------Using HMAC------------------------");
+
+        String jwt = TokenProvider.issueToken(authUser);
+        System.out.println("Toke is: " + jwt);
+
+        System.out.println(sdfDate.format(new Date()));
+        String authUser2 = TokenProvider.verifyToken(jwt);
+        System.out.println("Get credentials from token: " + authUser2);
+        System.out.println(sdfDate.format(new Date()));
+
+
+
     }
 }

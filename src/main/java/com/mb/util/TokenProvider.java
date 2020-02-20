@@ -8,10 +8,6 @@ import org.jose4j.jwt.consumer.JwtConsumerBuilder;
 import org.jose4j.keys.HmacKey;
 import org.jose4j.lang.JoseException;
 
-/**
- * @author khanhhm.os
- * Using HMAC_SHA256 generate secret key
- */
 public class TokenProvider {
     private static String secret = "Xz91Jn4yNlU23Tn5RfR7TyZYT0knAokWftBwzR5LIvzGt9pGkqLICOYCxkNrlA1C"; // God forgive me for this
 
