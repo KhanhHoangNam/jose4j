@@ -13,7 +13,7 @@ import java.util.Date;
 public class App {
     public static void main(String[] args) throws Exception {
         SimpleDateFormat sdfDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
-        String authUser = "KhanhHN";
+        String authUser = "{username: KhanhHN, password: 123456}";
         System.out.println("------------------------Using RSA------------------------");
 
 
@@ -22,8 +22,8 @@ public class App {
 
         System.out.println(sdfDate.format(new Date()));
         String authUser1 = JWTokenUtility.validate(token);
-        System.out.println("Get credentials from token: " + authUser1);
         System.out.println(sdfDate.format(new Date()));
+        System.out.println("Get credentials from token: " + authUser1);
 
         System.out.println("------------------------Using HMAC------------------------");
 
@@ -32,10 +32,8 @@ public class App {
 
         System.out.println(sdfDate.format(new Date()));
         String authUser2 = TokenProvider.verifyToken(jwt);
-        System.out.println("Get credentials from token: " + authUser2);
         System.out.println(sdfDate.format(new Date()));
-
-
+        System.out.println("Get credentials from token: " + authUser2);
 
     }
 }
