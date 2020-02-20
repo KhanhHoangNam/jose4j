@@ -11,8 +11,6 @@ import org.jose4j.lang.JoseException;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
 import java.security.spec.InvalidKeySpecException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * @author khanhhm.os
@@ -33,7 +31,7 @@ public class JWTokenUtility {
         try {
             jwt = jws.getCompactSerialization();
         } catch (JoseException ex) {
-            System.out.println(ex);;
+            System.out.println(ex);
         }
 
         return jwt;
