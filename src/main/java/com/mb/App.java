@@ -21,9 +21,9 @@ public class App {
         String token = JWTokenUtility.buildJWT(authUser);
         System.out.println("Token is: " + token);
 
-        System.out.println(sdfDate.format(new Date()));
+        System.out.println("Start time: " + sdfDate.format(new Date()));
         String authUser1 = JWTokenUtility.validate(token);
-        System.out.println(sdfDate.format(new Date()));
+        System.out.println("End time: " + sdfDate.format(new Date()));
         System.out.println("Get credentials from token: " + authUser1);
 
         System.out.println("------------------------Using HMAC------------------------");
@@ -31,9 +31,9 @@ public class App {
         String jwt = TokenProvider.issueToken(authUser);
         System.out.println("Toke is: " + jwt);
 
-        System.out.println(sdfDate.format(new Date()));
+        System.out.println("Start time: " + sdfDate.format(new Date()));
         String authUser2 = TokenProvider.verifyToken(jwt);
-        System.out.println(sdfDate.format(new Date()));
+        System.out.println("End time: " + sdfDate.format(new Date()));
         System.out.println("Get credentials from token: " + authUser2);
 
         System.out.println("------------------------Using JWE------------------------");
@@ -41,9 +41,9 @@ public class App {
         System.out.println("JWE is: " + jwe);
 
 
-        System.out.println(sdfDate.format(new Date()));
+        System.out.println("Start time: " + sdfDate.format(new Date()));
         String credentials = JWEUtility.decrypt(jwe);
-        System.out.println(sdfDate.format(new Date()));
+        System.out.println("End time: " + sdfDate.format(new Date()));
         System.out.println("Credentials is: " + credentials);
     }
 }

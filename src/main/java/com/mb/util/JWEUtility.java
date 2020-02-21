@@ -39,8 +39,9 @@ public class JWEUtility {
         AlgorithmConstraints encConstraints = new AlgorithmConstraints(AlgorithmConstraints.ConstraintType.WHITELIST, ContentEncryptionAlgorithmIdentifiers.AES_128_CBC_HMAC_SHA_256);
         receiverJwe.setContentEncryptionAlgorithmConstraints(encConstraints);
 
-        receiverJwe.setCompactSerialization(jwe);
         receiverJwe.setKey(jwk.getKey());
+        receiverJwe.setCompactSerialization(jwe);
+
 
         return receiverJwe.getPayload();
     }
