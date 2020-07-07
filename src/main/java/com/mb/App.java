@@ -45,5 +45,6 @@ public class App {
         String credentials = JWEUtility.decrypt(jwe);
         System.out.println("End time: " + sdfDate.format(new Date()));
         System.out.println("Credentials is: " + credentials);
+        System.out.println("Welcome to MacOs Catalina");
     }
 }
