@@ -30,6 +30,7 @@ public class JWTokenUtility {
         String jwt = null;
         try {
             jwt = jws.getCompactSerialization();
+            System.out.println(jwt);
         } catch (JoseException ex) {
             System.out.println(ex);
         }
