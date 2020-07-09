@@ -22,9 +22,9 @@ public class App {
         System.out.println("Token is: " + token);
 
         System.out.println("Start time: " + sdfDate.format(new Date()));
-        String authUser1 = JWTokenUtility.validate(token);
+        String nothingToLose = JWTokenUtility.validate(token);
         System.out.println("End time: " + sdfDate.format(new Date()));
-        System.out.println("Get credentials from token: " + authUser1);
+        System.out.println("Get credentials from token: " + nothingToLose);
 
         System.out.println("------------------------Using HMAC------------------------");
 
