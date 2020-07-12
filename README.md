@@ -1,1 +1,1 @@
-# Using jose4j libarary to authenticate with jwt, jwe
+# Using jose4j library to authenticate with jwt, jwe
